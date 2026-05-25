@@ -1,82 +1,44 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
-import attendace from "../../Assets/Projects/1.png";
-import automail from "../../Assets/Projects/2.png";
-import shopping from "../../Assets/Projects/3.png";
-import soMedia from "../../Assets/Projects/4.png";
-import { AiFillDownCircle } from "react-icons/ai";
-import { useEffect, useState } from "react";
-import DownButton from "../DownButton";
+import skillMatchImg from "../../Assets/Projects/SkillMatch.png"; // Đảm bảo đường dẫn ảnh chính xác
+import healthMateImg from "../../Assets/Projects/HealthMate.png"; // Hãy chép ảnh minh họa Healthmate của bạn vào đây
+
 function Projects() {
-  const [showScrollIcon, setShowScrollIcon] = useState(true);
-
-  const handleScroll = () => {
-    // Xác định vị trí cuộn và ẩn hiển thị của icon
-    const scrolled = window.scrollY;
-    if (scrolled > 200) {
-      setShowScrollIcon(false);
-    } else {
-      setShowScrollIcon(true);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   return (
-    <Container fluid className="project-section" id="projects">
-      <Particle />
+    <Container fluid className="project-section" id="projects" style={{ backgroundColor: "#000000", backgroundImage: "none", color: "#fff", paddingTop: "120px", paddingBottom: "100px" }}>
       <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Projects </strong>
+        <h1 className="project-heading" style={{ fontSize: "2.5em", fontWeight: "900", textAlign: "center" }}>
+          FEATURED <strong style={{ color: "#16f2b3" }}>PROJECTS</strong>
         </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+        <p style={{ color: "#e5e7eb", textAlign: "center", marginBottom: "50px" }}>
+          Interact with the live deployments or inspect underlying system documentation.
         </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "0px", paddingTop: "0px", marginTop: "0px" }}>
-          <Col md={4} className="project-card">
+        <Row style={{ justifyContent: "center", paddingBottom: "10px", gap: "30px" }}>
+          
+          {/* DỰ ÁN 1: SKILLMATCH (CÓ CẢ LIVE WEB VÀ CASE STUDY) */}
+          <Col md={5} className="project-card">
             <ProjectCard
-              imgPath={attendace}
-              isBlog={false}
-              title="Attendance using Face Recognition"
-              description="Use Face recognition for attendance in class, company,... If anyone not present in the class more than 2 times, it will automatically send an email to notice. "
-              ghLink="https://github.com/Duy-Thong/Attendance_Face_Recog_and_Email"
+              imgPath={skillMatchImg}
+              title="SkillMatch"
+              description="An AI-driven recruitment and training platform built with React, Node.js, and MongoDB. Engineered for intelligent candidate assessment and anti-cheating monitoring during test cycles. Integrates a flexible database layer alongside the PayOS payment gateway."
+              liveLink="https://skillmatch-k7gy.onrender.com"
+              detailLink="/project/skillmatch"
             />
           </Col>
-          <Col md={4} className="project-card">
+
+          {/* DỰ ÁN 2: HEALTHMATE (CHỈ CÓ LIVE WEB - KHÔNG HIỆN NÚT CASE STUDY) */}
+          <Col md={5} className="project-card">
             <ProjectCard
-              imgPath={automail}
-              isBlog={false}
-              title="Email Automation"
-              description="My personal app to auto send email in a list ( from xlsx file ) using python. It takes the content from html or txt files and renders it using python. With variables as recipient name, subject and content. "
-              ghLink="https://github.com/Duy-Thong/Email-Automation-Python"
+              imgPath={healthMateImg}
+              title="Healthmate"
+              description="A comprehensive health management application developed using React, Node.js, and MongoDB. Features an automated meal planning routing architecture and personalized AI coaching workflows for customized diet and exercise tracking."
+              liveLink="https://healthmate-wdp.vercel.app/homepage"
+              // Tuyệt đối không truyền detailLink để ẩn nút Case Study
             />
           </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={shopping}
-              isBlog={false}
-              title="Shopping Website"
-              description="A shopping website where you can buy different products. I developed this with my team and I was responsible for the back-end using Java Spring Boot. "
-              ghLink="https://github.com/Shodydosh/BE_JAVA_BTL"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={soMedia}
-              isBlog={false}
-              title="So Media Website"
-              description="A website for my club, So Media."
-              ghLink="https://github.com/Duy-Thong/SoMedia-Website"
-            />
-          </Col>
+
         </Row>
-        <DownButton scrollToElement="certificates" offsetElement={-30} style={{ paddingTop: "0px", marginTop: "0px" }} />
       </Container>
     </Container>
   );

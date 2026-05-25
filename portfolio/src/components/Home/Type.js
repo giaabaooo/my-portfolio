@@ -6,14 +6,14 @@ function Type() {
     <Typewriter
       options={{
         strings: [
-          "Back-end Developer",
-          "Python Developer",
-          "Web Developer",
-          "Mobile App Developer",
+          "Software Engineer",
+          "Fullstack Developer",
+          
         ],
         autoStart: true,
         loop: true,
-        deleteSpeed: 50,
+        deleteSpeed: 30, // Tốc độ xóa nhanh hơn để dứt khoát
+        cursor: "█", // Con trỏ phong cách Cyberpunk / Terminal
       }}
     />
   );

@@ -7,10 +7,12 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
+import ProjectDetails from "./components/Projects/ProjectDetails";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
+  Navigate
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
@@ -19,6 +21,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Certs from "./components/Certificate/Certs";
 import ContactUs from "./components/Contact";
 import Practicle from "../src/components/Particle";
+
 function App() {
   const [load, updateLoad] = useState(true);
 
@@ -33,19 +36,34 @@ function App() {
   return (
     <Router>
       <Helmet>
-        <title>DuyThong | Portfolio</title>
+        <title>Gia Bảo | Portfolio</title>
       </Helmet>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
-        <Home />
-        <About />
-        <Projects />
-        <Certs />
-        <Resume />
-        <ContactUs />
-        <Footer />
         <ScrollToTop />
+        
+        <Routes>
+          {/* TRANG CHỦ: Giữ nguyên vẹn tất cả các phân hệ xếp chồng của bạn */}
+          <Route path="/" element={
+            <>
+              <Home />
+              <About />
+              <Projects />
+              <Certs />
+              
+              <ContactUs />
+            </>
+          } />
+          
+          {/* TRANG RIÊNG BIỆT: Chỉ hiển thị duy nhất nội dung Case Study */}
+          <Route path="/project/skillmatch" element={<ProjectDetails />} />
+          
+          {/* Bẫy lỗi đường dẫn: Tự động quay về trang chủ nếu nhập sai link */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+        
+        <Footer />
       </div>
     </Router>
   );

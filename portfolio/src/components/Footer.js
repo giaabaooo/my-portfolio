@@ -21,7 +21,7 @@ function Footer() {
           <ul className="footer-icons">
             <li className="social-icons">
               <a
-                href="https://github.com/The-White-Bear"
+                href="https://github.com/giaabaooo"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -31,7 +31,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.facebook.com/duythong27"
+                href="https://facebook.com/ng.gia.baoooo/"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -41,7 +41,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="mailto:duythong.ptit@gmail.com"
+                href="mailto:giabaobs35@gmail.com"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -51,7 +51,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/d_d_thong"
+                href="https://www.instagram.com/ng.gia.bao/"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
