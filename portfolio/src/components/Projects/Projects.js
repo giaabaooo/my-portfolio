@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import skillMatchImg from "../../Assets/Projects/SkillMatch.png"; // Đảm bảo đường dẫn ảnh chính xác
+import tuhocvuiImg from "../../Assets/Projects/tuhocvui.png"; // Thêm ảnh minh họa cho tuhocvui.vn tại đây
 import healthMateImg from "../../Assets/Projects/HealthMate.png"; // Hãy chép ảnh minh họa Healthmate của bạn vào đây
 
 function Projects() {
@@ -27,7 +28,18 @@ function Projects() {
             />
           </Col>
 
-          {/* DỰ ÁN 2: HEALTHMATE (CHỈ CÓ LIVE WEB - KHÔNG HIỆN NÚT CASE STUDY) */}
+          {/* DỰ ÁN NỚI THÊM: TUHOCVUI.VN (NẰM TRƯỚC HEALTHMATE) */}
+          <Col md={5} className="project-card">
+            <ProjectCard
+              imgPath={tuhocvuiImg}
+              title="tuhocvui.vn"
+              description="An interactive e-learning platform designed to optimize self-study experiences. Built with a modern tech stack to deliver smooth content delivery, progress tracking, and friendly user interfaces for learners."
+              liveLink="https://tuhocvui.vn"
+              // detailLink="/project/tuhocvui" // Mở comment này và truyền link nếu dự án này có trang Case Study
+            />
+          </Col>
+
+          {/* DỰ ÁN 3: HEALTHMATE (CHỈ CÓ LIVE WEB - KHÔNG HIỆN NÚT CASE STUDY) */}
           <Col md={5} className="project-card">
             <ProjectCard
               imgPath={healthMateImg}
